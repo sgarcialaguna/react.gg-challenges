@@ -14,6 +14,7 @@ time {
 p {
     font-size: 14px;
     display: block;
+    aspect-ratio: unset;
 }
 
 a {
