@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Description from "../../Description";
 import useToggle from "./useToggle";
 import "./styles.css";
@@ -37,14 +39,13 @@ export default function UseToggle() {
       <button disabled={!on} className="link" onClick={() => toggle(false)}>
         Turn Off
       </button>
-      <button className="link" onClick={toggle}>
+      <button className="link" onClick={() => toggle()}>
         Toggle
       </button>
-      <button className="link" onClick={() => toggle("nope")}>
+      <button className="link" onClick={() => toggle("nope" as any)}>
         (Also toggles)
       </button>
       <ToggleDemo toggle={toggle} on={on} />
-
       <Description
         url="https://usehooks.com/usetoggle"
         description="A hook to toggle a boolean value"
