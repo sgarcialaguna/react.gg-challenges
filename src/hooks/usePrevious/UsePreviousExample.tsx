@@ -1,5 +1,6 @@
 import * as React from "react";
 import usePrevious from "./usePrevious";
+import "./styles.css";
 
 function getRandomColor() {
   const colors = ["green", "blue", "purple", "red", "pink"];
