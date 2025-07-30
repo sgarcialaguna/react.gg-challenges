@@ -8,7 +8,7 @@ export default function Description({
   return (
     <div style={{ display: "grid", gap: "0.5rem", marginTop: "2rem" }}>
       <a href={url} target="_blank">
-        Original component
+        Original hook
       </a>
       <div>{description}</div>
     </div>
