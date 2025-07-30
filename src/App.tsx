@@ -5,6 +5,7 @@ import UseDefaultExample from "./hooks/useDefault/UseDefaultExample";
 import UseToggleExample from "./hooks/useToggle/UseToggleExample";
 import UsePreviousExample from "./hooks/usePrevious/UsePreviousExample";
 import UsePreferredLanguageExample from "./hooks/usePreferredLanguage/UsePreferredLanguageExample";
+import UseFaviconExample from "./hooks/useFavicon/UseFaviconExample";
 
 import Root from "./Root";
 import { Routes, Route } from "react-router";
@@ -21,6 +22,7 @@ function App() {
           path="/usePreferredLanguage"
           element={<UsePreferredLanguageExample />}
         />
+        <Route path="/useFavicon" element={<UseFaviconExample />} />
       </Route>
     </Routes>
   );
