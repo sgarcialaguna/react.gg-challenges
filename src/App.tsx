@@ -8,9 +8,10 @@ import { Routes, Route } from "react-router";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Root />}></Route>
-      <Route path="/useDocumentTitle" element={<UseDocumentTitle />} />
-      <Route path="/useDefault" element={<UseDefault />} />
+      <Route path="/" element={<Root />}>
+        <Route path="/useDocumentTitle" element={<UseDocumentTitle />} />
+        <Route path="/useDefault" element={<UseDefault />} />
+      </Route>
     </Routes>
   );
 }
