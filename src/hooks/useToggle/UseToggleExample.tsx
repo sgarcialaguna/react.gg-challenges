@@ -1,12 +1,19 @@
 import Description from "../../Description";
 import useToggle from "./useToggle";
+import "./styles.css";
 
-function ToggleDemo({ on, toggle }) {
+function ToggleDemo({
+  on,
+  toggle,
+}: {
+  on: boolean;
+  toggle: (state?: boolean) => void;
+}) {
   return (
     <div>
       <label className="toggle">
         <input
-          onChange={toggle}
+          onChange={() => toggle()}
           className="toggle-checkbox"
           type="checkbox"
           checked={on}
