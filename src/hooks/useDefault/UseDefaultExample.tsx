@@ -7,7 +7,7 @@ export default function UseDefault() {
   const defaultState = { name: "Ben" };
   const [user, setUser] = useDefault<{ name: string } | null>(
     initialState,
-    defaultState
+    defaultState,
   );
 
   return (
