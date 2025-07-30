@@ -17,6 +17,7 @@ export default function Root() {
         <option value="/useDefault">useDefault</option>
         <option value="/useToggle">useToggle</option>
         <option value="/usePrevious">usePrevious</option>
+        <option value="/usePreferredLanguage">usePreferredLanguage</option>
       </select>
       <Outlet></Outlet>
     </>
