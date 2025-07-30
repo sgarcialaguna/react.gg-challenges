@@ -1,0 +1,17 @@
+section {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+pre {
+    margin-top: 32px;
+}
+
+code {
+    background-color: var(--charcoal);
+    padding: 24px;
+    border-radius: 8px;
+}

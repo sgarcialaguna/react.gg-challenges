@@ -16,9 +16,3 @@ p {
     color: color-mix(in srgb, var(--charcoal) 50%, var(--beige));
     margin: 20px auto;
 }
-
-code {
-    background-color: var(--charcoal);
-    padding: 24px;
-    border-radius: 8px;
-}

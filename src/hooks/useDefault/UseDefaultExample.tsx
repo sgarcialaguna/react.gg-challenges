@@ -1,4 +1,5 @@
-import useDefault from "../hooks/useDefault";
+import useDefault from "./useDefault";
+import "./styles.css";
 
 export default function UseDefault() {
   const initialState = { name: "Tyler" };

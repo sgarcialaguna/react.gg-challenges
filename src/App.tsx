@@ -1,15 +1,17 @@
 import "./theme.css";
-import "./styles.css";
 
-import UseDocumentTitle from "./sections/UseDocumentTitle";
-import UseDefault from "./sections/UseDefault";
+import UseDocumentTitle from "./hooks/useDocumentTitle/UseDocumentTitleExample";
+import UseDefault from "./hooks/useDefault/UseDefaultExample";
+import Root from "./Root";
+import { Routes, Route } from "react-router";
 
 function App() {
   return (
-    <>
-      <UseDocumentTitle></UseDocumentTitle>
-      <UseDefault></UseDefault>
-    </>
+    <Routes>
+      <Route path="/" element={<Root />}></Route>
+      <Route path="/useDocumentTitle" element={<UseDocumentTitle />} />
+      <Route path="/useDefault" element={<UseDefault />} />
+    </Routes>
   );
 }
 
