@@ -13,6 +13,7 @@ export default function Root() {
         <option value="useDocumentTitle">useDocumentTitle</option>
         <option value="useDefault">useDefault</option>
         <option value="useToggle">useToggle</option>
+        <option value="usePrevious">usePrevious</option>
       </select>
       <Outlet></Outlet>
     </>
