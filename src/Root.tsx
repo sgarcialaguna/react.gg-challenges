@@ -19,6 +19,7 @@ export default function Root() {
         <option value="/usePrevious">usePrevious</option>
         <option value="/usePreferredLanguage">usePreferredLanguage</option>
         <option value="/useFavicon">useFavicon</option>
+        <option value="/useCopyToClipboard">useCopyToClipboard</option>
       </select>
       <Outlet></Outlet>
     </>
