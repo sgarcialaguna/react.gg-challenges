@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function oldSchoolCopy(text: string) {
     const tempTextArea = document.createElement("textarea");
     tempTextArea.value = text;
@@ -7,6 +9,18 @@ function oldSchoolCopy(text: string) {
     document.body.removeChild(tempTextArea);
 }
 
-export default function useCopyToClipboard() {
-    return [];
+export default function useCopyToClipboard(): [string | null, (text: string) => void] {
+    const [lastValue, setLastValue] = useState<string | null>(null)
+    console.log(lastValue)
+
+    function copy(text: string) {
+        if (navigator.clipboard?.writeText) {
+            navigator.clipboard.writeText(text)
+        } else {
+            oldSchoolCopy(text)
+        }
+        setLastValue(text)
+    }
+
+    return [lastValue, copy];
 }

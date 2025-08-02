@@ -1,7 +1,7 @@
 import "./theme.css";
 
 import Root from "./Root";
-import { Routes, Route, useLocation, Router } from "react-router";
+import { Routes, Route, useLocation } from "react-router";
 import { lazy, useEffect } from "react";
 
 const UseDocumentTitle = lazy(
