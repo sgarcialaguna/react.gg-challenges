@@ -1,8 +1,8 @@
 import "./theme.css";
 
 import Root from "./Root";
-import { Routes, Route } from "react-router";
-import { lazy } from "react";
+import { Routes, Route, useLocation, Router } from "react-router";
+import { lazy, useEffect } from "react";
 
 const UseDocumentTitle = lazy(
   () => import("./hooks/useDocumentTitle/UseDocumentTitleExample"),
@@ -21,6 +21,19 @@ const UseCopyToClipboard = lazy(
 );
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const routeStylesheets = Array.from(
+      document.querySelectorAll<HTMLStyleElement>("style[data-vite-dev-id]"),
+    ).filter((el) => !el.dataset.viteDevId?.includes("theme"));
+    routeStylesheets.forEach((routeStylesheet) => {
+      routeStylesheet.disabled = !routeStylesheet.dataset.viteDevId?.includes(
+        location.pathname,
+      );
+    });
+  }, [location]);
+
   return (
     <Routes>
       <Route path="/" element={<Root />}>

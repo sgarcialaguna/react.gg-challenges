@@ -3,7 +3,6 @@ import { Outlet, useLocation, useNavigate } from "react-router";
 export default function Root() {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   return (
     <>
