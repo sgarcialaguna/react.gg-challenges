@@ -1,6 +1,5 @@
 import useDefault from "./useDefault";
 import "./styles.css";
-import Description from "../../Description";
 
 export default function UseDefault() {
   const initialState = { name: "Tyler" };
@@ -38,11 +37,6 @@ export default function UseDefault() {
       <pre>
         <code>{JSON.stringify(user)}</code>
       </pre>
-
-      <Description
-        url="https://usehooks.com/usedefault"
-        description="The useDefault hook behaves similar to useState but with one difference – if the state of the hook is undefined or null, useDefault will default the state to a provided default value."
-      />
     </section>
   );
 }

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import Description from "../../Description";
 import useToggle from "./useToggle";
 import "./styles.css";
 
@@ -46,10 +45,6 @@ export default function UseToggle() {
         (Also toggles)
       </button>
       <ToggleDemo toggle={toggle} on={on} />
-      <Description
-        url="https://usehooks.com/usetoggle"
-        description="A hook to toggle a boolean value"
-      ></Description>
     </section>
   );
 }
