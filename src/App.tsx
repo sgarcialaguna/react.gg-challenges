@@ -1,28 +1,39 @@
 import "./theme.css";
 
-import UseDocumentTitleExample from "./hooks/useDocumentTitle/UseDocumentTitleExample";
-import UseDefaultExample from "./hooks/useDefault/UseDefaultExample";
-import UseToggleExample from "./hooks/useToggle/UseToggleExample";
-import UsePreviousExample from "./hooks/usePrevious/UsePreviousExample";
-import UsePreferredLanguageExample from "./hooks/usePreferredLanguage/UsePreferredLanguageExample";
-import UseFaviconExample from "./hooks/useFavicon/UseFaviconExample";
-
 import Root from "./Root";
 import { Routes, Route } from "react-router";
+import { lazy } from "react";
+
+const UseDocumentTitle = lazy(
+  () => import("./hooks/useDocumentTitle/UseDocumentTitleExample"),
+);
+const UseDefault = lazy(() => import("./hooks/useDefault/UseDefaultExample"));
+const UseToggle = lazy(() => import("./hooks/useToggle/UseToggleExample"));
+const UsePrevious = lazy(
+  () => import("./hooks/usePrevious/UsePreviousExample"),
+);
+const UsePreferredLanguage = lazy(
+  () => import("./hooks/usePreferredLanguage/UsePreferredLanguageExample"),
+);
+const UseFavicon = lazy(() => import("./hooks/useFavicon/UseFaviconExample"));
+const UseCopyToClipboard = lazy(
+  () => import("./hooks/useCopyToClipboard/UseCopyToClipboardExample"),
+);
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Root />}>
-        <Route path="/useDocumentTitle" element={<UseDocumentTitleExample />} />
-        <Route path="/useDefault" element={<UseDefaultExample />} />
-        <Route path="/useToggle" element={<UseToggleExample />} />
-        <Route path="/usePrevious" element={<UsePreviousExample />} />
+        <Route path="/useDocumentTitle" element={<UseDocumentTitle />} />
+        <Route path="/useDefault" element={<UseDefault />} />
+        <Route path="/useToggle" element={<UseToggle />} />
+        <Route path="/usePrevious" element={<UsePrevious />} />
         <Route
           path="/usePreferredLanguage"
-          element={<UsePreferredLanguageExample />}
+          element={<UsePreferredLanguage />}
         />
-        <Route path="/useFavicon" element={<UseFaviconExample />} />
+        <Route path="/useFavicon" element={<UseFavicon />} />
+        <Route path="/useCopyToClipboard" element={<UseCopyToClipboard />} />
       </Route>
     </Routes>
   );
