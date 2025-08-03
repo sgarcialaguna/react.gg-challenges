@@ -1,3 +1,4 @@
+/// <reference types="react/experimental" />
 import "./theme.css";
 
 import Root from "./Root";
