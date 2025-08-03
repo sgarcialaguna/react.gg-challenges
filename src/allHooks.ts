@@ -8,6 +8,7 @@ const allHooks = [
     "useCopyToClipboard",
     "useInterval",
     "useCounter",
+    "useLockBodyScroll"
 ]
 
 export default allHooks
