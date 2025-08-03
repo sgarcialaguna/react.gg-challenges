@@ -1,4 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router";
+import allHooks from "./allHooks";
 
 export default function Root() {
   const navigate = useNavigate();
@@ -12,13 +13,11 @@ export default function Root() {
         defaultValue={location.pathname}
       >
         <option value="/">Navigate to a hook</option>
-        <option value="/useDocumentTitle">useDocumentTitle</option>
-        <option value="/useDefault">useDefault</option>
-        <option value="/useToggle">useToggle</option>
-        <option value="/usePrevious">usePrevious</option>
-        <option value="/usePreferredLanguage">usePreferredLanguage</option>
-        <option value="/useFavicon">useFavicon</option>
-        <option value="/useCopyToClipboard">useCopyToClipboard</option>
+        {allHooks.map((hook) => (
+          <option key={hook} value={`/${hook}`}>
+            {hook}
+          </option>
+        ))}
       </select>
       <Outlet></Outlet>
     </>
