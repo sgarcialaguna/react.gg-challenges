@@ -1,0 +1,53 @@
+header {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+article {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 8px;
+}
+
+ul {
+    display: flex;
+    background: rgba(249, 244, 218, 0.05);
+    padding: 24px;
+    border-radius: 16px;
+    overflow: auto;
+    gap: 16px;
+    min-width: 0;
+    white-space: nowrap;
+    height: calc(64px + 48px);
+}
+
+li {
+    display: flex;
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+li:last-child {
+    border-color: var(--blue);
+}
+
+li:first-child {
+    border-color: var(--green);
+}
+
+figcaption {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.5;
+}
