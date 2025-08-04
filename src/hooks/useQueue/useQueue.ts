@@ -1,23 +1,26 @@
 import * as React from "react";
 
-const placeholder = () => { };
 
-export default function useQueue(initialValue = []) {
+export default function useQueue<T>(initialValue: Array<T> = []) {
     const [queue, setQueue] = React.useState(initialValue);
 
-    const add = placeholder;
+    const add = (e: T) => { console.log(e); setQueue(q => [...q, e]) };
 
-    const remove = placeholder;
+    const remove = () => {
+        const firstItem = queue[0]
+        setQueue(q => q.slice(1));
+        return firstItem
+    }
 
-    const clear = placeholder;
+    const clear = () => setQueue([]);
 
     return {
         add,
         remove,
         clear,
-        first: null,
-        last: null,
-        size: null,
+        first: queue.length > 0 ? queue[0] : null,
+        last: queue.length > 0 ? queue[queue.length - 1] : null,
+        size: queue.length,
         queue
     };
 }
