@@ -1,7 +1,6 @@
 import { useSyncExternalStore } from "react";
 
 function getSnapshot() {
-    console.log(document.visibilityState)
     return document.visibilityState
 }
 

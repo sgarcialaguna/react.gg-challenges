@@ -4,7 +4,7 @@ import * as React from "react";
 export default function useQueue<T>(initialValue: Array<T> = []) {
     const [queue, setQueue] = React.useState(initialValue);
 
-    const add = (e: T) => { console.log(e); setQueue(q => [...q, e]) };
+    const add = (e: T) => { setQueue(q => [...q, e]) };
 
     const remove = () => {
         const firstItem = queue[0]

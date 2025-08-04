@@ -14,7 +14,8 @@ const allHooks = [
     "useWindow",
     "useVisibilityChange",
     "useList",
-    "useObjectState"
+    "useObjectState",
+    "useDebounce"
 ]
 
 export default allHooks

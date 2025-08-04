@@ -11,7 +11,6 @@ function oldSchoolCopy(text: string) {
 
 export default function useCopyToClipboard(): [string | null, (text: string) => void] {
     const [lastValue, setLastValue] = useState<string | null>(null)
-    console.log(lastValue)
 
     function copy(text: string) {
         if (navigator.clipboard?.writeText) {
