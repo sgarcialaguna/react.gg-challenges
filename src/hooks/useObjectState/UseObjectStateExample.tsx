@@ -62,7 +62,9 @@ export default function App() {
           <tbody>
             <tr>
               {Object.keys(state).map((key) => {
-                return <td key={key}>{`${state[key]}`}</td>;
+                return (
+                  <td key={key}>{`${state[key as keyof typeof state]}`}</td>
+                );
               })}
             </tr>
           </tbody>

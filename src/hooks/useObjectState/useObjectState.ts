@@ -4,7 +4,7 @@ const isPlainObject = (value: unknown) => {
     return Object.prototype.toString.call(value) === "[object Object]";
 };
 
-export default function useObjectState<T>(initialValue: Record<string, T>): [Record<string, T>, (arg0: Record<string, T> | SetStateAction<Record<string, T>>) => void] {
+export default function useObjectState<T extends Record<string, unknown>>(initialValue: T): [T, (arg0: Partial<T> | SetStateAction<Partial<T>>) => void] {
     const [value, setValue] = useState(initialValue)
     return [value, (newValue) => {
         if (isPlainObject(newValue)) {
