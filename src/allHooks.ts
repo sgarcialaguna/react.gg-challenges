@@ -11,7 +11,8 @@ const allHooks = [
     "useLockBodyScroll",
     "useQueue",
     "useTimeout",
-    "useWindow"
+    "useWindow",
+    "useVisibilityChange"
 ]
 
 export default allHooks
