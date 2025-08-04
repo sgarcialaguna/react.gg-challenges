@@ -14,6 +14,8 @@ const allElements = allHooks.map((hook) => ({
 function App() {
   const location = useLocation();
 
+  // This is a bit hacky and will only work in development. But it is alright for this example app
+  //
   useEffect(() => {
     const routeStylesheets = Array.from(
       document.querySelectorAll<HTMLStyleElement>("style[data-vite-dev-id]"),
