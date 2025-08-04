@@ -1,4 +1,8 @@
-export default function SearchResults({ results }) {
+export default function SearchResults({
+  results,
+}: {
+  results: Array<Record<string, string>>;
+}) {
   return (
     <article>
       <table>
@@ -15,6 +19,7 @@ export default function SearchResults({ results }) {
           <tbody>
             {results.map((item, index) => {
               return (
+                // @ts-expect-error blah
                 <tr key={item.objectID} style={{ "--delay": index }}>
                   <th>{index + 1}</th>
                   <td>

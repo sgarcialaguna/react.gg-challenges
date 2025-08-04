@@ -1,13 +1,13 @@
 import * as React from "react";
 import { edit, trash } from "./icons";
 
-function Composer({ handleAdd }) {
-  function handleSubmit(e) {
+function Composer({ handleAdd }: { handleAdd: (item: unknown) => void }) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.target as HTMLFormElement);
     const newItem = formData.get("item");
     handleAdd(newItem);
-    e.target.reset();
+    (e.target as HTMLFormElement).reset();
   }
   return (
     <li>
@@ -19,12 +19,20 @@ function Composer({ handleAdd }) {
   );
 }
 
-function ListItem({ item, handleUpdate, handleRemove }) {
+function ListItem({
+  item,
+  handleUpdate,
+  handleRemove,
+}: {
+  item: unknown;
+  handleUpdate: (item: unknown) => void;
+  handleRemove: () => void;
+}) {
   const [isEditing, setisEditing] = React.useState(false);
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.target as HTMLFormElement);
     const newItem = formData.get("item");
     handleUpdate(newItem || item);
     setisEditing(false);
@@ -34,7 +42,7 @@ function ListItem({ item, handleUpdate, handleRemove }) {
     <li>
       {isEditing ? (
         <form onSubmit={handleSubmit}>
-          <input name="item" placeholder={item} />
+          <input name="item" placeholder={item as string} />
           <button className="primary">Save</button>
         </form>
       ) : (
@@ -55,7 +63,17 @@ function ListItem({ item, handleUpdate, handleRemove }) {
   );
 }
 
-export default function ListDemo({ list, updateAt, push, removeAt }) {
+export default function ListDemo({
+  list,
+  updateAt,
+  push,
+  removeAt,
+}: {
+  list: Array<unknown>;
+  updateAt: (idx: number, item: unknown) => void;
+  push: (item: unknown) => void;
+  removeAt: (idx: number) => void;
+}) {
   return (
     <ul>
       <Composer handleAdd={(val) => push(val)} />

@@ -10,16 +10,16 @@ export default function App() {
   const [isSearching, setIsSearching] = React.useState(false);
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    setSearchTerm(formData.get("search"));
-    e.target.reset();
-    e.target.focus();
+    const formData = new FormData(e.target as HTMLFormElement);
+    setSearchTerm(formData.get("search") as string);
+    (e.target as HTMLFormElement).reset();
+    (e.target as HTMLFormElement).focus();
   };
 
   React.useEffect(() => {
