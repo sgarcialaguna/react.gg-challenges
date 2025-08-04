@@ -10,7 +10,8 @@ const allHooks = [
     "useCounter",
     "useLockBodyScroll",
     "useQueue",
-    "useTimeout"
+    "useTimeout",
+    "useWindow"
 ]
 
 export default allHooks
