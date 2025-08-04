@@ -1,0 +1,36 @@
+.link {
+    color: var(--beige) !important;
+}
+
+section {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+table {
+    margin-top: 40px;
+    border: 1px solid var(--charcoal);
+    width: 100%;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+th {
+    background-color: var(--charcoal);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+th,
+td {
+    border: 1px solid var(--charcoal);
+}
+
+td {
+    padding: 24px;
+}
+
+section article {
+    overflow: auto;
+}

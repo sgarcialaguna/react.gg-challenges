@@ -13,7 +13,8 @@ const allHooks = [
     "useTimeout",
     "useWindow",
     "useVisibilityChange",
-    "useList"
+    "useList",
+    "useObjectState"
 ]
 
 export default allHooks
