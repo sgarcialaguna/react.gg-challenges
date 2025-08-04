@@ -1,7 +1,17 @@
 import useQueue from "./useQueue";
 import "./styles.css";
 
-function QueueDemo({ first, last, size, queue }) {
+function QueueDemo({
+  first,
+  last,
+  size,
+  queue,
+}: {
+  first: number | null;
+  last: number | null;
+  size: number;
+  queue: Array<number>;
+}) {
   return (
     <figure>
       <article>
