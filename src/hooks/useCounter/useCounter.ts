@@ -3,7 +3,7 @@ import * as React from "react";
 
 declare type UseCounterOptions = { min?: number, max?: number }
 
-export default function useCounter(startingValue = 0, options: UseCounterOptions = {}) {
+export default function useCounter(startingValue = 0, options: UseCounterOptions = {}): [number, { increment: () => void, decrement: () => void, set: (newValue: number) => void, reset: () => void }] {
     const { min, max } = options;
 
     if (typeof min === "number" && startingValue < min) {
