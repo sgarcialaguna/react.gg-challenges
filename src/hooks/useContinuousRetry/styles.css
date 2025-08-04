@@ -1,0 +1,15 @@
+section {
+    text-align: center;
+}
+
+pre {
+    text-align: left;
+    padding: 16px;
+    background-color: var(--charcoal);
+    border-radius: 16px;
+    overflow: auto;
+}
+
+code {
+    overflow: auto;
+}

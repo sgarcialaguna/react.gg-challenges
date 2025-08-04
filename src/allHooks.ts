@@ -15,7 +15,8 @@ const allHooks = [
     "useVisibilityChange",
     "useList",
     "useObjectState",
-    "useDebounce"
+    "useDebounce",
+    "useContinuousRetry"
 ]
 
 export default allHooks
