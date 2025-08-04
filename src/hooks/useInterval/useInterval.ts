@@ -9,7 +9,6 @@ export default function useInterval(cb: () => void, ms: number) {
     const invokeCallback = useEffectEvent(cb)
 
     useEffect(() => {
-        console.log("FIRING EFFECT")
         interval.current = window.setInterval(invokeCallback, ms)
         return () => window.clearInterval(interval.current)
     }, [invokeCallback, ms])

@@ -1,0 +1,22 @@
+/* Your CSS goes here */
+
+section {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+.bomb {
+    background: transparent;
+}
+
+.link {
+    display: block !important;
+    margin: auto;
+}
+
+span {
+    font-size: 120px;
+}
