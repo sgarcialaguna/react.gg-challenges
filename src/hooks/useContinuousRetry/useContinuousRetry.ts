@@ -1,14 +1,31 @@
-import * as React from "react";
+import { useEffect, experimental_useEffectEvent as useEffectEvent, useState } from "react";
 
-React.useEffectEvent = React.experimental_useEffectEvent;
 
 export default function useContinuousRetry(
-    callback,
+    callback: () => boolean,
     interval = 100,
-    options = {}
+    options: { maxRetries?: number } = {}
 ) {
     const { maxRetries = Infinity } = options;
-    const [hasResolved, setHasResolved] = React.useState(false);
+    const [hasResolved, setHasResolved] = useState(false);
+    const invokeCallback = useEffectEvent(callback);
+
+    useEffect(() => {
+        let retries = 0;
+
+        const id = window.setInterval(() => {
+            if (invokeCallback()) {
+                setHasResolved(true);
+                window.clearInterval(id);
+            } else if (retries >= maxRetries) {
+                window.clearInterval(id);
+            } else {
+                retries += 1;
+            }
+        }, interval);
+
+        return () => window.clearInterval(id);
+    }, [interval, maxRetries, invokeCallback]);
 
     return hasResolved;
 }
