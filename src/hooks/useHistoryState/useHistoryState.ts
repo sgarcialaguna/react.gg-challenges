@@ -51,11 +51,11 @@ const reducer = (state: State, action: Action) => {
     }
 };
 
-export default function useHistoryState(initialPresent: unknown = {}) {
-    const [state, dispatch] = useReducer(reducer, { ...initialState, present: initialPresent })
+export default function useHistoryState<T>(initialPresent: T) {
+    const [state, dispatch] = useReducer(reducer, { ...initialState, present: initialPresent || {} })
 
     return {
-        state: state.present,
+        state: state.present as T,
         canUndo: state.past.length > 0,
         canRedo: state.future.length > 0,
         set: (newPresent: unknown) => dispatch({ "type": "SET", newPresent }),
