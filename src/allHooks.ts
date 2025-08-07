@@ -16,7 +16,8 @@ const allHooks = [
     "useList",
     "useObjectState",
     "useDebounce",
-    "useContinuousRetry"
+    "useContinuousRetry",
+    "useHistoryState"
 ]
 
 export default allHooks
