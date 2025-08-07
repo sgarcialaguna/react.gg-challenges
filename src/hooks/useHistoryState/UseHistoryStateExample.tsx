@@ -6,6 +6,7 @@ export default function App() {
   const { state, set, undo, redo, clear, canUndo, canRedo } = useHistoryState({
     items: [],
   });
+  console.log(state, canUndo, canRedo);
 
   const addTodo = (val) => {
     set({
