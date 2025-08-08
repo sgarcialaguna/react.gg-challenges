@@ -19,7 +19,8 @@ const allHooks = [
     "useContinuousRetry",
     "useHistoryState",
     "useEventListener",
-    "useRandomInterval"
+    "useRandomInterval",
+    "useMediaQuery"
 ]
 
 export default allHooks
