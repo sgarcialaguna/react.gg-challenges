@@ -1,13 +1,13 @@
 import * as React from "react";
 import { edit, trash } from "./icons";
 
-function Composer({ handleAdd }: { handleAdd: (item: unknown) => void }) {
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+function Composer({ handleAdd }) {
+  function handleSubmit(e) {
     e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
+    const formData = new FormData(e.target);
     const newItem = formData.get("item");
     handleAdd(newItem);
-    (e.target as HTMLFormElement).reset();
+    e.reset();
   }
   return (
     <li>
@@ -19,20 +19,12 @@ function Composer({ handleAdd }: { handleAdd: (item: unknown) => void }) {
   );
 }
 
-function ListItem({
-  item,
-  handleUpdate,
-  handleRemove,
-}: {
-  item: unknown;
-  handleUpdate: (item: unknown) => void;
-  handleRemove: () => void;
-}) {
+function ListItem({ item, handleUpdate, handleRemove }) {
   const [isEditing, setisEditing] = React.useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e) {
     e.preventDefault();
-    const formData = new FormData(e.target as HTMLFormElement);
+    const formData = new FormData(e);
     const newItem = formData.get("item");
     handleUpdate(newItem || item);
     setisEditing(false);
@@ -42,7 +34,7 @@ function ListItem({
     <li>
       {isEditing ? (
         <form onSubmit={handleSubmit}>
-          <input name="item" placeholder={item as string} />
+          <input name="item" placeholder={item} />
           <button className="primary">Save</button>
         </form>
       ) : (
@@ -63,17 +55,7 @@ function ListItem({
   );
 }
 
-export default function ListDemo({
-  list,
-  updateAt,
-  push,
-  removeAt,
-}: {
-  list: Array<unknown>;
-  updateAt: (idx: number, item: unknown) => void;
-  push: (item: unknown) => void;
-  removeAt: (idx: number) => void;
-}) {
+export default function ListDemo({ list, updateAt, push, removeAt }) {
   return (
     <ul>
       <Composer handleAdd={(val) => push(val)} />

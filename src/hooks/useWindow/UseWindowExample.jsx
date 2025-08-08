@@ -1,7 +1,7 @@
 import useWindowSize from "./useWindowSize";
 import "./styles.css";
 
-function Browser({ size }: { size: { width: number; height: number } }) {
+function Browser({ size }) {
   return (
     <div
       data-testid="browser"

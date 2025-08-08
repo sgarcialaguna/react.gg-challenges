@@ -4,7 +4,7 @@ import { closeIcon } from "./icons";
 import DemoContent from "./DemoContent";
 import "./styles.css";
 
-function Modal({ handleClose }: { handleClose: () => void }) {
+function Modal({ handleClose }) {
   useLockBodyScroll();
 
   return (

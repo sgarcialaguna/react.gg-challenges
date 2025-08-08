@@ -4,10 +4,7 @@ import "./styles.css";
 export default function UseDefault() {
   const initialState = { name: "Tyler" };
   const defaultState = { name: "Ben" };
-  const [user, setUser] = useDefault<{ name: string } | null>(
-    initialState,
-    defaultState,
-  );
+  const [user, setUser] = useDefault(initialState, defaultState);
 
   return (
     <section>

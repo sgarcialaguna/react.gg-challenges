@@ -8,7 +8,7 @@ import allHooks from "./allHooks";
 
 const allElements = allHooks.map((hook) => ({
   path: `/${hook}`,
-  element: lazy(() => import(`./hooks/${hook}/U${hook.slice(1)}Example.tsx`)),
+  element: lazy(() => import(`./hooks/${hook}/U${hook.slice(1)}Example.jsx`)),
 }));
 
 function App() {

@@ -3,13 +3,7 @@
 import useToggle from "./useToggle";
 import "./styles.css";
 
-function ToggleDemo({
-  on,
-  toggle,
-}: {
-  on: boolean;
-  toggle: (state?: boolean) => void;
-}) {
+function ToggleDemo({ on, toggle }) {
   return (
     <div>
       <label className="toggle">
@@ -41,7 +35,7 @@ export default function UseToggle() {
       <button className="link" onClick={() => toggle()}>
         Toggle
       </button>
-      <button className="link" onClick={() => toggle("nope" as any)}>
+      <button className="link" onClick={() => toggle("nope")}>
         (Also toggles)
       </button>
       <ToggleDemo toggle={toggle} on={on} />

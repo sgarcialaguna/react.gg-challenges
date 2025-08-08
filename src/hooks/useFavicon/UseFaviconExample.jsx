@@ -9,7 +9,7 @@ const faviconMap = {
 };
 
 export default function App() {
-  const [id, setId] = React.useState<keyof typeof faviconMap>("uidotdev");
+  const [id, setId] = React.useState("uidotdev");
 
   useFavicon(faviconMap[id]);
 

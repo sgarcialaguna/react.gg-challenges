@@ -2,15 +2,7 @@ import * as React from "react";
 import useTimeout from "./useTimeout";
 import "./styles.css";
 
-function Bomb({
-  hasExploded,
-  hasDefused,
-  handleClick,
-}: {
-  hasExploded: boolean;
-  hasDefused: boolean;
-  handleClick: React.MouseEventHandler;
-}) {
+function Bomb({ hasExploded, hasDefused, handleClick }) {
   if (hasExploded) {
     return (
       <figure>

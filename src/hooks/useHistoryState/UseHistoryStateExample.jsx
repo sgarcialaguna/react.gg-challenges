@@ -2,24 +2,19 @@ import Form from "./Form";
 import useHistoryState from "./useHistoryState";
 import "./styles.css";
 
-declare type State = {
-  items: Array<{ id: string; name: string }>;
-};
-
 export default function App() {
-  const { state, set, undo, redo, clear, canUndo, canRedo } =
-    useHistoryState<State>({
-      items: [],
-    });
+  const { state, set, undo, redo, clear, canUndo, canRedo } = useHistoryState({
+    items: [],
+  });
 
-  const addTodo = (val: string) => {
+  const addTodo = (val) => {
     set({
       ...state,
       items: state.items.concat([{ id: crypto.randomUUID(), name: val }]),
     });
   };
 
-  const removeTodo = (id: string) => {
+  const removeTodo = (id) => {
     set({
       ...state,
       items: state.items.filter((item) => item.id !== id),
