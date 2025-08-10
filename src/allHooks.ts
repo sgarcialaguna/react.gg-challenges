@@ -22,7 +22,8 @@ const allHooks = [
     "useRandomInterval",
     "useMediaQuery",
     "useIntervalWhen",
-    "useMouse"
+    "useMouse",
+    "useClickAway"
 ]
 
 export default allHooks
