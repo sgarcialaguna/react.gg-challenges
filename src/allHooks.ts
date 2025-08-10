@@ -23,7 +23,8 @@ const allHooks = [
     "useMediaQuery",
     "useIntervalWhen",
     "useMouse",
-    "useClickAway"
+    "useClickAway",
+    "useWindowScroll"
 ]
 
 export default allHooks

@@ -1,0 +1,31 @@
+section {
+    position: relative;
+    padding: 24px;
+    max-width: 600px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: var(--coal);
+    padding: 24px;
+}
+
+p {
+    text-align: center;
+    background: var(--charcoal);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+aside {
+    bottom: 0;
+    background: var(--purple);
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+    font-family: monospace;
+}
