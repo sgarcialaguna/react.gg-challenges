@@ -7,23 +7,23 @@ export default function useOrientation() {
     });
 
     useLayoutEffect(() => {
-        const handleScreenOrientationChange = () => {
-            setOrientation({ angle: screen.orientation.angle, type: screen.orientation.type })
+        const handleChange = () => {
+            setOrientation({ angle: window.screen.orientation.angle, type: window.screen.orientation.type })
         }
 
-        const handleOrientationChange = () => {
+        const handle_orientationchange = () => {
             setOrientation({ angle: window.orientation, type: "UNKNOWN" as OrientationType })
         }
 
         if (window.screen?.orientation) {
-            handleScreenOrientationChange()
-            window.screen.orientation.addEventListener('change', handleScreenOrientationChange)
-            return () => window.screen.orientation.removeEventListener('change', handleScreenOrientationChange)
+            handleChange()
+            window.screen.orientation.addEventListener('change', handleChange)
+            return () => window.screen.orientation.removeEventListener('change', handleChange)
         }
 
-        handleOrientationChange()
-        window.addEventListener('orientationchange', handleOrientationChange)
-        return () => window.removeEventListener('orientationchange', handleOrientationChange)
+        handle_orientationchange()
+        window.addEventListener('orientationchange', handle_orientationchange)
+        return () => window.removeEventListener('orientationchange', handle_orientationchange)
     }, [])
 
     return orientation;
