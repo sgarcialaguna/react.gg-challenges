@@ -25,7 +25,8 @@ const allHooks = [
     "useMouse",
     "useClickAway",
     "useWindowScroll",
-    "useLogger"
+    "useLogger",
+    "useOrientation"
 ]
 
 export default allHooks
