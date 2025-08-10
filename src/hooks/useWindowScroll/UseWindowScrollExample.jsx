@@ -1,4 +1,5 @@
 import useWindowScroll from "./useWindowScroll";
+import "./styles.css";
 
 export default function App() {
   const [{ x, y }, scrollTo] = useWindowScroll();
