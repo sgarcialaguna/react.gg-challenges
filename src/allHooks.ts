@@ -20,7 +20,8 @@ const allHooks = [
     "useHistoryState",
     "useEventListener",
     "useRandomInterval",
-    "useMediaQuery"
+    "useMediaQuery",
+    "useIntervalWhen"
 ]
 
 export default allHooks
