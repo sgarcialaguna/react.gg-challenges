@@ -1,0 +1,48 @@
+section {
+    text-align: center;
+    padding: 24px;
+}
+
+h5 {
+    text-transform: uppercase;
+    font-size: 12px;
+    position: absolute;
+    top: 8px;
+}
+
+h6 {
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 40px;
+}
+
+ul {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 100%;
+    max-width: 600px;
+    gap: 24px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+li {
+    align-self: center;
+    width: 100%;
+    background: var(--charcoal);
+    aspect-ratio: 4/5;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+li.active {
+    box-shadow: 0px 0px 0px 2px var(--green);
+}

@@ -24,7 +24,8 @@ const allHooks = [
     "useIntervalWhen",
     "useMouse",
     "useClickAway",
-    "useWindowScroll"
+    "useWindowScroll",
+    "useLogger"
 ]
 
 export default allHooks
