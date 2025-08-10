@@ -16,5 +16,5 @@ export default function useEventListener(target: HTMLElement, eventName: string,
         }
         addEventListener(target, eventName)
         return () => removeEventListener(target, eventName)
-    }, [target, eventName, options, addEventListener, removeEventListener])
+    }, [target, eventName, options])
 }

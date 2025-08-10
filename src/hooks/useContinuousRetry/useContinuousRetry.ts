@@ -25,7 +25,7 @@ export default function useContinuousRetry(
         }, interval);
 
         return () => window.clearInterval(id);
-    }, [interval, maxRetries, invokeCallback]);
+    }, [interval, maxRetries]);
 
     return hasResolved;
 }

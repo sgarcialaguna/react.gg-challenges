@@ -11,7 +11,7 @@ export default function useInterval(cb: () => void, ms: number) {
     useEffect(() => {
         interval.current = window.setInterval(invokeCallback, ms)
         return () => window.clearInterval(interval.current)
-    }, [invokeCallback, ms])
+    }, [ms])
 
     useEffect(() => {
         if (stopped) {

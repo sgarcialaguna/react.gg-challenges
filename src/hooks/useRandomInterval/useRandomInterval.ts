@@ -19,7 +19,7 @@ export default function useRandomInterval(cb: () => void, { minDelay, maxDelay }
     useEffect(() => {
         id.current = window.setTimeout(invokeCallback, getRandomNumber(minDelay, maxDelay))
         return () => window.clearTimeout(id.current!)
-    }, [id, minDelay, maxDelay, invokeCallback])
+    }, [id, minDelay, maxDelay])
 
     useEffect(() => {
         if (stopped) {
