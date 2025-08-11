@@ -28,7 +28,8 @@ const allHooks = [
     "useLogger",
     "useOrientation",
     "useBattery",
-    "usePageLeave"
+    "usePageLeave",
+    "useKeyPress"
 ]
 
 export default allHooks
