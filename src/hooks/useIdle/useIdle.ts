@@ -15,36 +15,46 @@ export default function useIdle(ms = 1000 * 20) {
     const [idle, setIdle] = useState(false);
 
     useEffect(() => {
-        const id = window.setInterval(throttledSetIdle, ms)
-
-        function throttledSetIdle() {
-            throttle(() => setIdle(true), ms)()
+        const handleTimeout = () => {
+            setIdle(true)
         }
 
-        function resetIdle() {
-            throttledSetIdle()
-            setIdle(false);
+        let timeoutId = window.setTimeout(handleTimeout, ms)
+
+        const handleEvent = throttle(() => {
+            setIdle(false)
+            window.clearTimeout(timeoutId)
+            timeoutId = window.setTimeout(handleTimeout, ms)
+        }, 500)
+
+        const handleVisibilityChange = () => {
+            if (!document.hidden) {
+                handleEvent()
+            }
         }
 
-        window.addEventListener("mousemove", resetIdle);
-        window.addEventListener("mousedown", resetIdle);
-        window.addEventListener("resize", resetIdle);
-        window.addEventListener("keydown", resetIdle);
-        window.addEventListener("touchstart", resetIdle);
-        window.addEventListener("wheel", resetIdle);
-        document.addEventListener("visibilitychange", resetIdle);
+        timeoutId = window.setTimeout(handleTimeout, ms)
+
+        window.addEventListener("mousemove", handleEvent);
+        window.addEventListener("mousedown", handleEvent);
+        window.addEventListener("resize", handleEvent);
+        window.addEventListener("keydown", handleEvent);
+        window.addEventListener("touchstart", handleEvent);
+        window.addEventListener("wheel", handleEvent);
+        document.addEventListener("visibilitychange", handleVisibilityChange);
 
         return () => {
-            window.removeEventListener("mousemove", resetIdle);
-            window.removeEventListener("mousedown", resetIdle);
-            window.removeEventListener("resize", resetIdle);
-            window.removeEventListener("keydown", resetIdle);
-            window.removeEventListener("touchstart", resetIdle);
-            window.removeEventListener("wheel", resetIdle);
-            document.removeEventListener("visibilitychange", resetIdle);
-            window.clearInterval(id)
+            window.removeEventListener("mousemove", handleEvent);
+            window.removeEventListener("mousedown", handleEvent);
+            window.removeEventListener("resize", handleEvent);
+            window.removeEventListener("keydown", handleEvent);
+            window.removeEventListener("touchstart", handleEvent);
+            window.removeEventListener("wheel", handleEvent);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
+            window.clearTimeout(timeoutId)
         };
-    }, [ms]);
+    }, [ms])
+
 
     return idle;
 }
