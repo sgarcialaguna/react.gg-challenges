@@ -31,6 +31,8 @@ export default function useFetch(url: string, options: RequestInit) {
     const startFetchingData = useEffectEvent(() => fetch(url, options))
 
     useEffect(() => {
+        let ignore = false
+
         async function fetchData() {
             try {
                 dispatch({ type: 'loading' })
@@ -39,13 +41,21 @@ export default function useFetch(url: string, options: RequestInit) {
                     throw new Error(`Response status: ${response.status}`)
                 }
                 const data = await response.json()
-                dispatch({ type: 'fetched', payload: data })
+                if (!ignore) {
+                    dispatch({ type: 'fetched', payload: data })
+                }
             }
             catch (error) {
-                dispatch({ type: 'error', payload: error })
+                if (!ignore) {
+                    dispatch({ type: 'error', payload: error })
+                }
             }
         }
         fetchData()
+
+        return () => {
+            ignore = true
+        }
     }, [url])
 
     return state;
