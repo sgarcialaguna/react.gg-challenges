@@ -32,7 +32,8 @@ const allHooks = [
     "useKeyPress",
     "useThrottle",
     "useIdle",
-    "useFetch"
+    "useFetch",
+    "useCountdown"
 ]
 
 export default allHooks

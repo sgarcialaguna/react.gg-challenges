@@ -1,0 +1,24 @@
+section {
+    text-align: center;
+}
+
+header {
+    margin-bottom: 1em;
+}
+
+.countdown {
+    display: inline-flex;
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+.button-row {
+    margin-top: 20px;
+}
+
+.button-row button {
+    background: var(--charcoal);
+    color: var(--beige);
+    margin: 0 5px;
+}
