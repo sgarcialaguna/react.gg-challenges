@@ -31,7 +31,8 @@ const allHooks = [
     "usePageLeave",
     "useKeyPress",
     "useThrottle",
-    "useIdle"
+    "useIdle",
+    "useFetch"
 ]
 
 export default allHooks
