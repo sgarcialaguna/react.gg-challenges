@@ -1,4 +1,4 @@
-import { experimental_useEffectEvent as useEffectEvent, useReducer } from "react";
+import { useEffect, experimental_useEffectEvent as useEffectEvent, useReducer } from "react";
 
 declare type State = {
     error: unknown,
@@ -10,7 +10,7 @@ const initialState: State = {
     data: undefined
 };
 
-declare type Action = { type: 'loading' | 'fetched' | 'error', payload: unknown }
+declare type Action = { type: 'loading' } | { type: 'fetched' | 'error', payload: unknown }
 
 const reducer = (state: State, action: Action) => {
     switch (action.type) {
@@ -25,8 +25,28 @@ const reducer = (state: State, action: Action) => {
     }
 };
 
-export default function useFetch(url: string, options: unknown) {
+export default function useFetch(url: string, options: RequestInit) {
     const [state, dispatch] = useReducer(reducer, initialState);
+
+    const startFetchingData = useEffectEvent(() => fetch(url, options))
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                dispatch({ type: 'loading' })
+                const response = await startFetchingData()
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`)
+                }
+                const data = await response.json()
+                dispatch({ type: 'fetched', payload: data })
+            }
+            catch (error) {
+                dispatch({ type: 'error', payload: error })
+            }
+        }
+        fetchData()
+    }, [url])
 
     return state;
 }
