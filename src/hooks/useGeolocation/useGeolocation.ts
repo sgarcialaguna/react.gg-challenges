@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 declare type State = {
     loading: boolean;
@@ -26,6 +26,7 @@ export default function useGeolocation(options: PositionOptions = {}) {
         timestamp: null,
         error: null,
     });
+    const optionsRef = useRef(options)
 
     useEffect(() => {
         const successCallback = (p: GeolocationPosition) => {
@@ -48,12 +49,12 @@ export default function useGeolocation(options: PositionOptions = {}) {
         navigator.geolocation.getCurrentPosition(
             successCallback,
             errorCallback,
-            options,
+            optionsRef.current,
         );
-        const id = navigator.geolocation.watchPosition(successCallback, errorCallback, options)
+        const id = navigator.geolocation.watchPosition(successCallback, errorCallback, optionsRef.current)
 
         return () => navigator.geolocation.clearWatch(id)
-    }, [options]);
+    }, []);
 
     return state;
 }
