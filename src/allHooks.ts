@@ -29,7 +29,8 @@ const allHooks = [
     "useOrientation",
     "useBattery",
     "usePageLeave",
-    "useKeyPress"
+    "useKeyPress",
+    "useThrottle"
 ]
 
 export default allHooks
