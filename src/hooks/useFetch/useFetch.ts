@@ -12,6 +12,8 @@ const initialState: State = {
 
 declare type Action = { type: 'loading' } | { type: 'fetched' | 'error', payload: unknown }
 
+const cache: Record<string, unknown> = {}
+
 const reducer = (state: State, action: Action) => {
     switch (action.type) {
         case "loading":
@@ -35,6 +37,13 @@ export default function useFetch(url: string, options: RequestInit) {
 
         async function fetchData() {
             try {
+                if (cache[url]) {
+                    {
+                        dispatch({ type: 'fetched', payload: cache[url] })
+                        return
+                    }
+                }
+
                 dispatch({ type: 'loading' })
                 const response = await startFetchingData()
                 if (!response.ok) {
@@ -43,6 +52,7 @@ export default function useFetch(url: string, options: RequestInit) {
                 const data = await response.json()
                 if (!ignore) {
                     dispatch({ type: 'fetched', payload: data })
+                    cache[url] = data
                 }
             }
             catch (error) {
