@@ -30,7 +30,8 @@ const allHooks = [
     "useBattery",
     "usePageLeave",
     "useKeyPress",
-    "useThrottle"
+    "useThrottle",
+    "useIdle"
 ]
 
 export default allHooks

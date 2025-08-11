@@ -1,0 +1,65 @@
+/* Your CSS goes here */
+
+section {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+section div {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    /* left: -24px; */
+    width: 110px;
+}
+
+p {
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--green);
+    display: inline-flex;
+    animation: pulse 1.75s infinite;
+
+    --color1: rgb(11, 169, 91, 0);
+    --color2: rgb(11, 169, 91, 0.25);
+    --color3: rgb(11, 169, 91, 0.15);
+}
+
+span.idle {
+    animation: none;
+    background-color: var(--yellow);
+    --color1: rgba(252, 186, 40, 0);
+    --color2: rgba(252, 186, 40, 0.25);
+    --color3: rgba(252, 186, 40, 0.15);
+}
+
+label {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 24px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0px 0px 0px 0px var(--color1), 0px 0px 0px 0px var(--color1);
+    }
+
+    50% {
+        box-shadow: 0px 0px 0px 5px var(--color2), 0px 0px 0px 10px var(--color3);
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 0px var(--color1), 0px 0px 0px 0px var(--color1);
+    }
+}
