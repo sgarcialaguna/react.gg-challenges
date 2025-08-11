@@ -27,7 +27,8 @@ const allHooks = [
     "useWindowScroll",
     "useLogger",
     "useOrientation",
-    "useBattery"
+    "useBattery",
+    "usePageLeave"
 ]
 
 export default allHooks
