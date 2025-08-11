@@ -1,0 +1,40 @@
+section {
+    text-align: center;
+}
+
+.globe {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+table {
+    margin: auto;
+    border: 1px solid var(--charcoal);
+}
+
+th {
+    background: var(--charcoal);
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px;
+}
+
+thead td {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+tbody td {
+    font-size: 12px;
+    font-family: monospace;
+    padding: 8px;
+    border: 1px solid var(--charcoal);
+}
+
+article {
+    overflow: auto;
+}

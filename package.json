@@ -13,6 +13,7 @@
     "lodash.memoize": "^4.1.2",
     "react": "^0.0.0-experimental-bdb4a96f-20250801",
     "react-dom": "^0.0.0-experimental-bdb4a96f-20250801",
+    "react-globe.gl": "^2.35.0",
     "react-router": "^7.7.1"
   },
   "devDependencies": {

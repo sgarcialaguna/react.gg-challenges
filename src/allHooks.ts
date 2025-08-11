@@ -33,7 +33,8 @@ const allHooks = [
     "useThrottle",
     "useIdle",
     "useFetch",
-    "useCountdown"
+    "useCountdown",
+    "useGeolocation"
 ]
 
 export default allHooks
