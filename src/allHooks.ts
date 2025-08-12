@@ -38,7 +38,8 @@ const allHooks = [
     "useLocalStorage",
     "useSessionStorage",
     "useIsClient",
-    "useNetworkState"
+    "useNetworkState",
+    "useLongPress"
 ]
 
 export default allHooks
