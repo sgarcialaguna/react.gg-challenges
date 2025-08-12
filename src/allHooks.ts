@@ -36,7 +36,8 @@ const allHooks = [
     "useCountdown",
     "useGeolocation",
     "useLocalStorage",
-    "useSessionStorage"
+    "useSessionStorage",
+    "useIsClient"
 ]
 
 export default allHooks
