@@ -35,7 +35,8 @@ const allHooks = [
     "useFetch",
     "useCountdown",
     "useGeolocation",
-    "useLocalStorage"
+    "useLocalStorage",
+    "useSessionStorage"
 ]
 
 export default allHooks

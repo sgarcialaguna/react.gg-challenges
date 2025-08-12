@@ -1,0 +1,76 @@
+/* Your CSS goes here */
+
+h1 {
+    margin-top: 40px;
+}
+
+section {
+    text-align: center;
+    margin: auto;
+    max-width: 600px;
+}
+
+section div {
+    margin-bottom: 24px;
+}
+
+button {
+    gap: 8px;
+    align-items: center;
+}
+
+button span {
+    font-size: 18px;
+    position: relative;
+    line-height: 0;
+}
+
+button.link {
+    color: var(--beige);
+    width: 100%;
+}
+
+.cart {
+    position: relative;
+    background-color: var(--charcoal);
+    color: var(--beige);
+    position: fixed;
+    top: 24px;
+    right: 24px;
+}
+
+.cart-count {
+    position: absolute;
+    font-size: 8px;
+    font-weight: bold;
+    background-color: var(--yellow);
+    color: var(--charcoal);
+    box-shadow: 0px 0px 0px 2px var(--coal);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -6px;
+    right: -6px;
+    border: 2px solid var(--charcoal);
+}
+
+.animate {
+    animation: animate-in 0.5s ease-in-out;
+}
+
+@keyframes animate-in {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
