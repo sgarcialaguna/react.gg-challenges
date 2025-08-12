@@ -37,7 +37,8 @@ const allHooks = [
     "useGeolocation",
     "useLocalStorage",
     "useSessionStorage",
-    "useIsClient"
+    "useIsClient",
+    "useNetworkState"
 ]
 
 export default allHooks
